@@ -57,17 +57,26 @@ The `settings.ini` file allows you to customize various parameters for the simul
 * RAdeg: right ascension in degree of the destination star (only for custom destination)
 * DEdeg: declination in degree of the destination star (only for custom destination)
 * parallax: parallax in miliarcseconds (mas) of the destination star (only for custom destination)
-To convert between parallax and distance: D=1000/parallax where parallax is in mas and distance D is in parsec. 1 parsec = 3.62 ly.
+To convert between parallax and distance: D=1000/parallax where parallax is in mas and distance D is in parsec. 1 parsec = 3.62 ly
 
 ### Sky Map Section
 *. Width, Height: dimension of the output image in pixels. (These are only a guideline as matplotlib adds margins which I did not find a way to control. The default value left in `settings.ini` results in a roughly 1920x1080 image)
+
 *. LaTeX: set to `yes` or `no` to determin whether to render text using LaTeX for better visual quality.
+
+
 *. SizeMultiplier: a multiplier for adjusting the size of stars based on their magnitudes.
+
 *. MaxSize: maximum size for the stars in the output image
-*. SizePowerLaw: star size is determined by this function (const)$\cdot b^m_V$, (const) is `SizeMultiplier` above and this value is $\log_{10}b$
+
+*. SizePowerLaw: star size is determined by this function (const) $\cdot b^m_V$, (const) is `SizeMultiplier` above and this value is $\log_{10}b$
+
 *. AzimuthSpan: the azimuthal span of the view, in degrees
+
 *. AltitudeSpan: the altitude span of the view, in degrees
+
 *. VmagCutoff: the visual magnitude cutoff, stars fainter than this magnitude will not be displayed
+
 
 
 
