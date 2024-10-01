@@ -75,7 +75,7 @@ To convert between parallax and distance: D=1000/parallax where parallax is in m
 * VmagCutoff: the visual magnitude cutoff, stars fainter than this magnitude will not be displayed
 
 ### Animation Section
-* Animated: set to `yes` or `no` to determine if a series of images will be produced for animation
+* Animated: set to `yes` or `no` to determine if a series of images will be produced for animation. If not animated, a single file `sky_map.png` will be generated.
 * TripStar, TripEnd, TripStep: these will produce an equally spaced trip-ratios to plot
 * FrameFormat: the file extension of frame images
 * FrameFileHead, FrameFileTail: the strings to attach before / after frame number, e.g. if we plot 150 frames and set
