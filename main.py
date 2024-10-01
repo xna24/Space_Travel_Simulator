@@ -25,7 +25,6 @@ import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 from matplotlib.offsetbox import OffsetImage, AnnotationBbox
 import os
-from tqdm import tqdm
 import time
 
 from numpy import sin, cos, tan, sqrt, pi, log, dot, sinh, tanh, arccos, log10, exp
