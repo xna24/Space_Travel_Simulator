@@ -88,5 +88,47 @@ FrameFileTail = 20241001
 ```
 The resulting files will be `frame_001_20241001.png`, `frame_002_20241001.png` ...
 
+## Example
 
+A trip to HIP 38594. Initialize the parameters (parts omitted ... left as default) 
+```ini
+[Catalog]
+StarCatalog = HIP_TYC
+...
+[Destination]
+HIP = 38594
+...
+[Sky Map]
+Width = 2405
+Height = 1377
+LaTeX = no
+SizeMultiplier = 2
+MaxSize = 25
+SizePowerLaw = 2.5
+AzimuthSpan = 30
+AltitudeSpan = 17.1767
+VmagCutoff = 16
+...
+```
+
+In command-line:
+```bash
+> python3 main.py 0.15
+Star catalog loaded.
+Tot. star count: 1040740
+Destination: HIP 38594 HIP 38594
+Distance: 63.752 ly
+Right Ascension(deg): 118.546
+Declination(deg): -25.304
+██████████████████████████████████████████████████| 0.06%, 2.39s
+██████████████████████████████████████████████████| 0.12%, 4.87s
+██████████████████████████████████████████████████| 0.18%, 7.16s
+██████████████████████████████████████████████████| 0.24%, 8.82s
+██████████████████████████████████████████████████| 0.30%, 13.94s
+██████████████████████████████████████████████████| 0.36%, 19.78s
+██████████████████████████████████████████████████| 0.42%, 23.09s
+██████████████████████████████████████████████████| 0.49%, 24.78s
+```
+
+Here is the output `sky_map.png`:
 
