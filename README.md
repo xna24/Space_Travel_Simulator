@@ -69,6 +69,19 @@ To convert between parallax and distance: D=1000/parallax where parallax is in m
 * AltitudeSpan: the altitude span of the view, in degrees
 * VmagCutoff: the visual magnitude cutoff, stars fainter than this magnitude will not be displayed
 
+### Animation Section
+* Animated: set to `yes` or `no` to determine if a series of images will be produced for animation
+* TripStar, TripEnd, TripStep: these will produce an equally spaced trip-ratios to plot
+* FrameFormat: the file extension of frame images
+* FrameFileHead, FrameFileTail: the strings to attach before / after frame number, e.g. if we plot 150 frames and set
+```ini
+[Animation]
+...
+FrameFormat = png
+FrameFileHead = frame
+FrameFileTail = 20241001
+```
+The resulting files will be `frame_001_20241001.png`, `frame_002_20241001.png` ...
 
 
 
