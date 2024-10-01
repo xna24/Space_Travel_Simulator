@@ -43,3 +43,31 @@ This will use the parameters defined in your `settings.ini` file.
 python3 main.py [trip_ratio]
 ```
 Replace `[trip_ratio]` with a floating-point number between 0 and 1 (not too close to these two numbers), indicating how much of the trip (in proper time) is complete (e.g., 0.5 for halfway).
+
+## Configuration
+The `settings.ini` file allows you to customize various parameters for the simulation. Below is an explanation of the key sections and their options:
+### Catalog Section
+* StarCatalog: specifies which catalog to use. Options include `HIP_TYC` for the Hipparcos-Tycho catalog (combining stars in both catalogs and uses the more precise parameters in Hipparcos when possible, a total of more than $10^6$ stars); `HIP` for just the Hipparcos catalog (118,218 stars); or `custom` for a user-defined catalog.
+* StarCatalogFileName: path to the custom star catalog file, if using a custom catalog
+* StarCatalogRAColumn, StarCatalogDEColumn, StarCatalogParallaxColumn, StarCatalogVmagColumn, StarCatalogBVColumn: these parameters define the name of the columns in the star catalog that contain the right ascension (RA), declination (DE), parallax, visual magnitude (Vmag), and B-V color index respectively.
+
+### Destination Section
+* HIP: the index in the Hipparcos catalog for the destination star. For custom destinations, set this to `0`.
+* Name: the name of the destination star. If left blank and not a custom destination, the HIP number will be printed instead
+* RAdeg: right ascension in degree of the destination star (only for custom destination)
+* DEdeg: declination in degree of the destination star (only for custom destination)
+* parallax: parallax in miliarcseconds (mas) of the destination star (only for custom destination)
+To convert between parallax and distance: D=1000/parallax where parallax is in mas and distance D is in parsec. 1 parsec = 3.62 ly.
+
+### Sky Map Section
+*. Width, Height: dimension of the output image in pixels. (These are only a guideline as matplotlib adds margins which I did not find a way to control. The default value left in `settings.ini` results in a roughly 1920x1080 image)
+*. LaTeX: set to `yes` or `no` to determin whether to render text using LaTeX for better visual quality.
+*. SizeMultiplier: a multiplier for adjusting the size of stars based on their magnitudes.
+*. MaxSize: maximum size for the stars in the output image
+*. SizePowerLaw: star size is determined by this function (const)$\cdot b^m_V$, (const) is `SizeMultiplier` above and this value is $\log_{10}b$
+*. AzimuthSpan: the azimuthal span of the view, in degrees
+*. AltitudeSpan: the altitude span of the view, in degrees
+*. VmagCutoff: the visual magnitude cutoff, stars fainter than this magnitude will not be displayed
+
+
+
