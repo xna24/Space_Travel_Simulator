@@ -5,9 +5,9 @@ to the speed of light. By configuring various parameters, users can visualize th
 relativistic effects on time, distance and the apparence of stars. 
 
 The basic set-up of the journey is this: we travel along a straightline to the destination star with constant (proper) acceleration
-of 9.8 $m\cdot s^{-2}$
-(See document.pdf for a complete
-introduction of the physics and astronomy behind the project)
+of $g=$ 9.8 $m\cdot s^{-2}$ for the first half and $-g$ for the second half to slow down before arrival. See `document.pdf` 
+for a brief introduction and computations involved. A general rule of thumb is for a trip to a star $L$ lightyears away, the
+maximum Lorentz factor is $L/(2\text{ly})$.
 
 ## Features
 1. Configurable settings via `settings.ini` file
