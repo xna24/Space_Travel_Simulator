@@ -131,4 +131,4 @@ Declination(deg): -25.304
 ```
 
 Here is the output `sky_map.png`:
-
+![`sky_map.png`](https://github.com/xna24/Space_Travel_Simulator/blob/main/sky_map.png?raw=true)
