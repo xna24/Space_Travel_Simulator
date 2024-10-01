@@ -15,4 +15,8 @@ introduction of the physics and astronomy behind the project)
 ## Installation
 To run this project, you need Python 3 installed on your machine.
 1. Clone the repository:
-2. Installed required packages
+```bash
+git clone https://github.com/xna24/Space_Travel_Simulator.git
+cd Space_Travel_Simulator
+```
+3. Installed required packages
