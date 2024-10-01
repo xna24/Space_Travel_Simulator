@@ -29,6 +29,10 @@ cd Space_Travel_Simulator
 ```bash
 pip install -r requirements.txt
 ```
+alternatively
+```bash
+pip install numpy matplotlib pandas
+```
 3. Configure your settings in the `settings.ini` file
 
 ## Usage
