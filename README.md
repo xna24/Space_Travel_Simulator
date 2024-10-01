@@ -33,7 +33,7 @@ alternatively
 ```bash
 pip install numpy matplotlib pandas
 ```
-3. (Optional) Uncompress the Tycho catalog file if using `HIP_TYC` in `StarCatalog` option in `settings.ini`.
+3. (Optional) Uncompress the Tycho catalog file `HIP_TYC.csv.gz` if using `HIP_TYC` in `StarCatalog` option in `settings.ini`. Be sure to put `HIP_TYC.csv` in the same folder as `main.py`.
 4. Configure your settings in the `settings.ini` file
 
 ## Usage
