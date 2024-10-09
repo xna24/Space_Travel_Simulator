@@ -137,33 +137,25 @@ def trip_info_string(des_name, L_ly, T, t, tau, x_t, beta_t, trip_ratio, use_lat
 # ------------------------------------------------------------------------------#
 # Master function                                                               #
 # ------------------------------------------------------------------------------#
-# Requires global variable: tot_star_computed, tot_star_to_compute
-# X_data, Y_data, rad_lst, color_lst should be np.array of size DF_star.shape[0], 
-# to be written in and passed to matplotlib.axes.Axes.plot. They are respectively: 
-# horizontal and vertical coordinates, size of marker and color of marker.
-# 
-# DF_stars is a DataFrame with key columns in "col_names" list, containing :
-# HIP, TYC, longitude, latitude, parallax, parallax validity (1=valid or 0=invalid),
-# apparent magnitude (at Earth), B-V color
-# All values in this DataFrame is assumed to be strings, HIP number contain no white spaces
-# columns of long, lat, plx, plx_validity, mag, B-V must all have value (i.e. float(..) can be applied)
-# Note we only travel to stars in Hipparcos catalog with more accurate parallaxes
-# compute_list (for MasterF_debug only): list of row indices to compute in DF_stars
-# Return a tuple of trip current status plus a count of visible stars
-# debug_flag: if True, will print info for each star computed in "compute_list"
-#             do NOT set to True if you're using it on all the stars, or else it prints too much
-# -----------------------------------------------------------------------
-
-# Update:
-# MasterF rewritten: it now accesses more global variables
-#                    in particular, l_star_LIST, b_star_LIST, plx_LIST
-#                                   vmag_LIST, bv_LIST, plx_val_LIST, all float
-#                    another change: no need for col_names!
-#                    all these lists need to have same length LIST_length, also part of inputs
-# I've temporarily taken away debug things
 
 def MasterF(ldes, bdes, plx_des, trip_ratio, LIST_length, \
             azm_range_deg, alt_range_deg, vs_cutoff):
+
+    """
+    Computes appearance of stars during travel
+    Args: 
+        ldes, bdes, plx_des (float): angular position and distance of destination star
+        trip_ratio (float): trip ratio
+        LIST_length (int): length of l_star_LIST, b_star_LIST, plx_LIST, vmag_LIST, bv_LIST, plx_val_LIST
+        azm_range_deg (float (2,)), alt_range_deg (float (2,)): range of field of vision, both are pairs
+        vs_cutoff (float): visual magnitude cut-off
+    Returns:
+        L_ly, T, t, tau, x_t, beta_t (float): resp. total distance, total coord time, current coord time, 
+                                              current proper time, current distance covered, current velocity / c
+        count (int): number of entries of X_data, Y_data, rad_lst, color_lst written in
+    Usage: the lists X_data, Y_data, rad_lst, color_lst are X-, Y- coordinates, size and color
+           these are fed into matplotlib.pyplot to make scatter plots
+    """
     
     # only do so for global variables we alter
     global tot_star_computed, computation_time_spent  
